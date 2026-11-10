@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portfolio of Dhara Rukmini — Computer Science Engineering student, Python and web development enthusiast.">
+<title>Dhara Rukmini | Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b1020;--panel:#121a2d;--panel2:#172239;--text:#f4f6fb;--muted:#a8b3c7;--mint:#65e6c2;--line:#26334c;--pink:#f19ab0}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% 0%,#1a2941 0,transparent 35%),var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.65}a{color:inherit;text-decoration:none}.wrap{width:min(1120px,90%);margin:auto}
+header{position:sticky;top:0;z-index:5;background:#0b1020df;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}nav{height:76px;display:flex;align-items:center;justify-content:space-between}.brand{font:700 21px 'Space Grotesk';letter-spacing:-.7px}.brand span{color:var(--mint)}.links{display:flex;gap:23px;font-size:13px;color:var(--muted)}.links a:hover{color:var(--mint)}
+.hero{min-height:590px;display:grid;grid-template-columns:1.25fr .75fr;align-items:center;gap:50px;padding:80px 0}.eyebrow{color:var(--mint);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase}.hero h1{font:700 clamp(46px,7vw,82px)/1.03 'Space Grotesk';letter-spacing:-4px;margin:18px 0}.hero h1 em{color:var(--mint);font-style:normal}.lead{color:var(--muted);font-size:17px;max-width:610px}.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}.btn{padding:12px 20px;border-radius:8px;background:var(--mint);color:#07131a;font-weight:700;font-size:14px}.btn.alt{background:transparent;border:1px solid #52617a;color:var(--text)}.profile-photo{width:min(320px,80vw);aspect-ratio:1;object-fit:cover;object-position:center 28%;border-radius:50%;margin:auto;display:block;border:4px solid var(--mint);box-shadow:0 0 0 10px #65e6c21a,0 0 75px #65e6c233;animation:orbFloat 5s ease-in-out infinite,orbAppear 1.1s .25s both}
+section{padding:76px 0;border-top:1px solid var(--line)}.section-kicker{color:var(--mint);font-size:11px;letter-spacing:2px;font-weight:700}.section-title{font:700 36px 'Space Grotesk';letter-spacing:-1.5px;margin:8px 0 28px}.muted{color:var(--muted)}.about-grid,.project-grid,.cert-grid,.edu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.card{background:linear-gradient(145deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:15px;padding:24px}.card h3{font:600 19px 'Space Grotesk';margin:0 0 9px}.card p{color:var(--muted);margin:0}.chips{display:flex;gap:9px;flex-wrap:wrap;margin-top:20px}.chip{border:1px solid #35445e;background:#111a2b;color:#d9e5f5;border-radius:30px;padding:7px 12px;font-size:13px}
+.project img,.cert img{width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--line);margin-bottom:17px}.project .tag{color:var(--mint);font-size:12px;font-weight:700}.cert-grid{grid-template-columns:repeat(2,1fr)}.cert img{max-height:280px;object-fit:contain;background:#fff}.cert-toggle{border:0;cursor:pointer;margin-top:14px;font-family:inherit}.certificate-image{margin-top:18px}.certificate-image[hidden]{display:none}.timeline{border-left:2px solid #40506a;padding-left:22px;margin:12px 0 0 8px}.timeline .item{position:relative;margin:0 0 24px}.timeline .item:before{content:"";position:absolute;left:-30px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 5px #65e6c21c}.timeline h3{margin:0;font:600 18px 'Space Grotesk'}.timeline p{margin:4px 0;color:var(--muted)}.contact{display:grid;grid-template-columns:1fr 1fr;gap:20px}.contact a{color:var(--mint)}footer{padding:28px 0;color:var(--muted);font-size:13px;text-align:center;border-top:1px solid var(--line)}
+@media(max-width:760px){.links{gap:12px;overflow:auto;max-width:65%;font-size:12px}.hero{grid-template-columns:1fr;padding:65px 0}.profile-photo{width:210px;grid-row:1}.hero h1{letter-spacing:-2px}.about-grid,.project-grid,.cert-grid,.edu-grid,.contact{grid-template-columns:1fr}section{padding:55px 0}.section-title{font-size:30px}}
+
+/* Motion design: smooth entrance, hover and floating effects */
+html{scroll-behavior:smooth}
+body{overflow-x:hidden}
+header{animation:headerDrop .7s ease both}
+.hero .eyebrow{animation:fadeUp .7s .1s both}
+.hero h1{animation:fadeUp .8s .22s both}
+.hero .lead{animation:fadeUp .8s .36s both}
+.hero .actions{animation:fadeUp .8s .5s both}
+.profile-photo{animation:orbFloat 5s ease-in-out infinite, orbAppear 1.1s .25s both}
+.btn{transition:transform .25s ease,box-shadow .25s ease,background .25s ease}
+.btn:hover{transform:translateY(-4px);box-shadow:0 10px 28px #65e6c244}
+.card{transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease}
+.card:hover{transform:translateY(-6px);border-color:#65e6c288;box-shadow:0 16px 36px #0004}
+.project img,.cert img{transition:transform .45s ease}
+.project:hover img{transform:scale(1.018)}
+.links a{position:relative;transition:color .2s ease}
+.links a:after{content:"";position:absolute;left:0;bottom:-7px;width:0;height:2px;background:var(--mint);transition:width .25s ease}
+.links a:hover:after{width:100%}
+.chip{transition:transform .22s ease,border-color .22s ease,background .22s ease}
+.chip:hover{transform:translateY(-3px);border-color:var(--mint);background:#1b3540}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1)}
+.reveal.is-visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.12s}.reveal-delay-2{transition-delay:.24s}.reveal-delay-3{transition-delay:.36s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes headerDrop{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes orbAppear{from{opacity:0;scale:.82}to{opacity:1;scale:1}}
+@keyframes orbFloat{0%,100%{translate:0 0}50%{translate:0 -13px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+
+</style></head>
+<body>
+<header><nav class="wrap"><a class="brand" href="#home">DR<span>.</span></a><div class="links"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#certificates">Certificates</a><a href="#contact">Contact</a></div></nav></header>
+<main>
+<div class="wrap hero" id="home"><div><div class="eyebrow">Computer Science Engineering Student</div><h1>Hi, I'm<br><em>Dhara Rukmini.</em></h1><p class="lead">Curious learner and aspiring developer exploring Python, data analytics, artificial intelligence and web technologies. I enjoy turning ideas into practical digital experiences.</p><div class="actions"><a class="btn" href="#projects">Explore my work ↗</a><a class="btn alt" href="Dhara_Rukmini_Resume.pdf" target="_blank">View résumé ↓</a></div></div><img class="profile-photo" src="assets/dhara-rukmini-profile.png" alt="Professional portrait of Dhara Rukmini"></div>
+<section id="about"><div class="wrap"><div class="section-kicker">01 / ABOUT ME</div><h2 class="section-title">A little about me</h2><div class="about-grid"><div class="card"><h3>My journey</h3><p>I'm pursuing B.Tech in Computer Science Engineering at Madanapalle Institute of Technology & Science. I am building my foundations in programming and exploring how AI and technology can solve real-world problems.</p></div><div class="card"><h3>What drives me</h3><p>I am especially interested in AI, aeronautics and defence-sector technology. I value teamwork, patience, adaptability and continuous learning, and I am eager to grow through practical opportunities.</p></div></div></div></section>
+<section id="skills"><div class="wrap"><div class="section-kicker">02 / TOOLKIT</div><h2 class="section-title">Skills & interests</h2><div class="card"><h3>Technical skills</h3><div class="chips"><span class="chip">Python</span><span class="chip">Java</span><span class="chip">C</span><span class="chip">SQL basics</span><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">Windows</span><span class="chip">Linux</span></div><h3 style="margin-top:25px">Areas of interest</h3><div class="chips"><span class="chip">Artificial Intelligence</span><span class="chip">Data Analytics</span><span class="chip">Aeronautics</span><span class="chip">Defence technology</span><span class="chip">Web development</span></div></div></div></section>
+<section id="projects"><div class="wrap"><div class="section-kicker">03 / SELECTED WORK</div><h2 class="section-title">Projects</h2><div class="project-grid">
+<article class="card project"><img src="assets/mad-food-project.png" alt="Mad Food food delivery management system project screenshot"><div class="tag">WEB PROJECT</div><h3>Food Delivery Management System — Mad Food</h3><p>A food delivery management project presented through the Mad Food Partner Portal, designed to connect restaurant partners with a food delivery platform. The interface includes Home, About, Features and partner Login sections.</p></article>
+<article class="card project"><img src="assets/smarttour-ai-project.png" alt="SmartTour AI tourism website screenshot"><div class="tag">WEB PROJECT</div><h3>SmartTour AI — Tourism Website</h3><p>A tourism website concept that helps users explore destinations with interest-based filters, budget range, ratings and travel-style preferences.</p></article>
+</div></div></section>
+<section id="education"><div class="wrap"><div class="section-kicker">04 / LEARNING</div><h2 class="section-title">Education & experience</h2><div class="edu-grid"><div class="card"><h3>Education</h3><div class="timeline"><div class="item"><h3>B.Tech — Computer Science Engineering</h3><p>Madanapalle Institute of Technology & Science · 2024–2028</p><p>CGPA: 8.51</p></div><div class="item"><h3>Intermediate — MPC</h3><p>MJPAPBCWR Junior College, Tekulodu · 2022–2024</p><p>95.5%</p></div><div class="item"><h3>SSC</h3><p>MJPAPBCWR School, Tekulodu · 2021–2022</p><p>93%</p></div></div></div><div class="card"><h3>Internship</h3><div class="timeline"><div class="item"><h3>Career School & IT Solutions</h3><p>Intern · Advanced Python, Data Analytics & Generative AI</p><p>Duration: 2 months</p><p>Training certificate dated 13 July 2026. Specific project contribution and internship dates were not provided.</p></div></div><h3 style="margin-top:25px">Achievement</h3><p>Second place in a poster presentation at a technical symposium.</p></div></div></div></section>
+<section id="certificates"><div class="wrap"><div class="section-kicker">05 / CONTINUOUS LEARNING</div><h2 class="section-title">Certificates</h2><div class="cert-grid">
+<article class="card cert"><h3>Python — The Programming Language</h3><p>Sradex Learning · 87.75% · Issued 1 January 2026</p><button class="btn cert-toggle" type="button" aria-expanded="false" data-target="cert-sradex">View Certificate</button><img id="cert-sradex" class="certificate-image" src="assets/sradex-python-certificate.jpeg" alt="Sradex Python certificate" hidden></article>
+<article class="card cert"><h3>Advanced Python, Data Analytics & Generative AI</h3><p>CareerSchool HR Solutions · 13 July 2026</p><button class="btn cert-toggle" type="button" aria-expanded="false" data-target="cert-career">View Certificate</button><img id="cert-career" class="certificate-image" src="assets/career-school-certificate.jpeg" alt="Career School certificate" hidden></article>
+<article class="card cert"><h3>Understanding Incubation & Entrepreneurship</h3><p>NPTEL · 91% · Jan–Apr 2026</p><button class="btn cert-toggle" type="button" aria-expanded="false" data-target="cert-nptel">View Certificate</button><img id="cert-nptel" class="certificate-image" src="assets/nptel-incubation-certificate.jpeg" alt="NPTEL Understanding Incubation and Entrepreneurship certificate" hidden></article>
+<article class="card cert"><h3>Introduction to Artificial Intelligence</h3><p>Simplilearn SkillUp · 16 March 2026</p><button class="btn cert-toggle" type="button" aria-expanded="false" data-target="cert-simplilearn">View Certificate</button><img id="cert-simplilearn" class="certificate-image" src="assets/simplilearn-ai-certificate.jpeg" alt="Simplilearn Introduction to Artificial Intelligence certificate" hidden></article>
+</div></div></section>
+<section id="contact"><div class="wrap"><div class="section-kicker">06 / SAY HELLO</div><h2 class="section-title">Let's connect</h2><div class="card contact"><div><h3>Get in touch</h3><p class="muted">Open to learning opportunities, collaboration and internships.</p></div><div><p>Email: <a href="mailto:rukminidevangam1234@gmail.com">rukminidevangam1234@gmail.com</a></p><p>Phone: <a href="tel:+917013653905">+91 70136 53905</a></p><p>LinkedIn: <a href="https://www.linkedin.com/in/rukmini-devangam-460081331" target="_blank" rel="noopener">View profile ↗</a></p><p>Languages: English · Telugu · Hindi</p></div></div></div></section>
+</main><footer><div class="wrap">© 2026 Dhara Rukmini · Designed with curiosity and care.</div></footer>
+<script>
+document.querySelectorAll('.cert-toggle').forEach(function(button){
+  button.addEventListener('click', function(){
+    var image = document.getElementById(button.dataset.target);
+    var isHidden = image.hidden;
+    image.hidden = !isHidden;
+    button.textContent = isHidden ? 'Hide Certificate' : 'View Certificate';
+    button.setAttribute('aria-expanded', String(isHidden));
+  });
+});
+</script>
+
+<script>
+(function(){
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const revealItems = document.querySelectorAll('main section .wrap > *, main section .wrap .card, footer .wrap');
+  revealItems.forEach((item, index) => {
+    item.classList.add('reveal');
+    if (index % 4 === 1) item.classList.add('reveal-delay-1');
+    if (index % 4 === 2) item.classList.add('reveal-delay-2');
+    if (index % 4 === 3) item.classList.add('reveal-delay-3');
+  });
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    revealItems.forEach(item => item.classList.add('is-visible'));
+  } else {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold: 0.12, rootMargin: '0px 0px -35px 0px'});
+    revealItems.forEach(item => observer.observe(item));
+  }
+})();
+</script>
+
+</body></html>
